@@ -9552,23 +9552,11 @@ h4, h5, h6 {
 }
 
 .section-title::before {
-  position: absolute;
-  content: "";
-  width: 150px;
-  height: 2px;
-  bottom: 12px;
-  left: calc(50% - 75px);
-  background: #009CFF;
+  display: none;
 }
 
 .section-title::after {
-  position: absolute;
-  content: "";
-  width: 120px;
-  height: 2px;
-  bottom: 8px;
-  left: calc(50% - 60px);
-  background: #009CFF;
+  display: none;
 }
 
 .product-img,
