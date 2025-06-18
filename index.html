@@ -24,6 +24,88 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Responsive logo and company name */
+        .ecs-header {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .ecs-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0;
+        }
+        .ecs-logo {
+            max-width: 180px;
+            height: auto;
+            margin-left: 16px;
+        }
+        @media (max-width: 767.98px) {
+            .ecs-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .ecs-header h1 {
+                font-size: 1.3rem;
+            }
+            .ecs-logo {
+                max-width: 120px;
+                margin-left: 0;
+            }
+            .section-title h1,
+            .section-title .display-4 {
+                font-size: 2rem !important;
+            }
+            .carousel-caption h3 {
+                font-size: 1.3rem !important;
+            }
+            .carousel-caption h4 {
+                font-size: 1rem !important;
+            }
+            .product-item .bg-secondary h3 {
+                font-size: 1.1rem;
+            }
+            .container,
+            .container-fluid {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
+            .py-5 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+        }
+        /* Responsive map */
+        .map-responsive {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .map-responsive iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: 0;
+        }
+        /* Responsive carousel height */
+        @media (max-width: 767.98px) {
+            .carousel-item {
+                height: 300px !important;
+                min-height: 200px !important;
+            }
+        }
+        /* Responsive footer social icons */
+        .footer-social .btn {
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -57,10 +139,9 @@
 
    <!-- Company Name and Logo Start -->
 <div class="container-fluid bg-white py-3">
-    <div class="container d-flex align-items-center justify-content-start flex-wrap">
-        <h1 class="text-warning text-uppercase m-0" style="font-weight: 700;">Eminent Consultancy Services</h1> 
-        <img src="img/logo.jpg" alt="Company Logo Banner" style="width: 100%; height: auto; display: block;">
-        
+    <div class="container ecs-header">
+        <h1 class="text-warning text-uppercase m-0" style="font-weight: 700;">Eminent Consultancy Services</h1>
+        <img src="img/logo.jpg" alt="Company Logo Banner" class="ecs-logo">
     </div>
 </div>
 <!-- Company Name and Logo End -->
@@ -192,20 +273,20 @@
         </div>
         <div class="owl-carousel gallery-carousel">
             <div class="gallery-item">
-                <img class="img-fluid w-100" src="img/gallery-1.jpg" alt="">
-                <a class="btn btn-primary" href="img/gallery-1.jpg" data-lightbox="gallery">
+                <img class="img-fluid w-100" src="img/gallery-1.jpeg" alt="">
+                <a class="btn btn-primary" href="img/gallery-1.jpeg" data-lightbox="gallery">
                     <i class="fa fa-2x fa-plus text-white"></i>
                 </a>
             </div>
             <div class="gallery-item">
-                <img class="img-fluid w-100" src="img/gallery-2.jpg" alt="">
-                <a class="btn btn-primary" href="img/gallery-2.jpg" data-lightbox="gallery">
+                <img class="img-fluid w-100" src="img/gallery-2.jpeg" alt="">
+                <a class="btn btn-primary" href="img/gallery-2.jpeg" data-lightbox="gallery">
                     <i class="fa fa-2x fa-plus text-white"></i>
                 </a>
             </div>
             <div class="gallery-item">
-                <img class="img-fluid w-100" src="img/gallery-3.jpg" alt="">
-                <a class="btn btn-primary" href="img/gallery-3.jpg" data-lightbox="gallery">
+                <img class="img-fluid w-100" src="img/gallery-3.jpeg" alt="">
+                <a class="btn btn-primary" href="img/gallery-3.jpeg" data-lightbox="gallery">
                     <i class="fa fa-2x fa-plus text-white"></i>
                 </a>
             </div>
@@ -278,7 +359,7 @@
             <div class="container py-5">
                 <div class="row">
                     <!-- Contact Form -->
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
                         <h4 class="mb-4">Send Us a Message</h4>
                         <form id="contactForm">
                             <div class="form-group">
@@ -296,15 +377,14 @@
                     <!-- Google Map -->
                     <div class="col-lg-6">
                         <h4 class="mb-4">Our Location</h4>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.177974164842!2d80.6322533!3d16.5525643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f1e4e7e2c8e1%3A0x6e6e8e6e8e6e8e6e!2s16%C2%B033'09.2%22N%2080%C2%B037'58.4%22E!5e0!3m2!1sen!2sin!4v1717580000000!5m2!1sen!2sin"
-                            width="100%"
-                            height="300"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                        <div class="map-responsive">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.177974164842!2d80.6322533!3d16.5525643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f1e4e7e2c8e1%3A0x6e6e8e6e8e6e8e6e!2s16%C2%B033'09.2%22N%2080%C2%B037'58.4%22E!5e0!3m2!1sen!2sin!4v1717580000000!5m2!1sen!2sin"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -344,7 +424,7 @@
                 <div class="row">
                     <div class="col-md-6 mb-5">
                         <p>We believe in delivering real value through clear communication, expert execution, and a customer-first mindset. Our focus is on building long-term relationships by consistently exceeding expectations and driving measurable results.</p>
-                        <div class="d-flex justify-content-start mt-4">
+                        <div class="d-flex justify-content-start mt-4 footer-social">
                             <!--<a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>-->
